@@ -1233,9 +1233,21 @@ body::before {
     }
 
     .prog-tabs {
-        margin-left: calc(var(--gutter) * -1);
-        margin-right: calc(var(--gutter) * -1);
-        padding: 0 var(--gutter)
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+        overflow: visible;
+        border-bottom: 0;
+        margin-bottom: 48px
+    }
+
+    .prog-tab {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line)
+    }
+
+    .prog-tab .latin {
+        font-size: 17px
     }
 }
 
@@ -2007,13 +2019,27 @@ body::before {
     }
 
     .story-portrait {
-        max-width: 320px
+        order: 2;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px
     }
 
     .story-portrait .frame {
         flex: none;
+        width: 84px;
         aspect-ratio: 3/4;
-        min-height: 0
+        min-height: 0;
+        border-radius: 60px 60px 2px 2px
+    }
+
+    .story-portrait p {
+        margin: 0
+    }
+
+    .story-portrait p small {
+        display: block;
+        margin: 2px 0 0
     }
 
     .sec-head {
@@ -2136,6 +2162,98 @@ body::before {
     .hero-cta .btn {
         flex: 1 1 100%
     }
+
+    body {
+        font-size: 15px
+    }
+
+    .hero h1 {
+        font-size: 26px
+    }
+
+    .h-sec {
+        font-size: 22px
+    }
+
+    .story-quote {
+        font-size: 20px;
+        margin-bottom: 28px
+    }
+
+    .story-pull strong {
+        font-size: 21px
+    }
+
+    .story-pull span {
+        font-size: 14px
+    }
+
+    .hz-panel h3 {
+        font-size: 22px
+    }
+
+    .hz-num {
+        font-size: 56px
+    }
+
+    .values .latin {
+        font-size: 24px
+    }
+
+    .sig-name h2 {
+        font-size: 34px
+    }
+
+    .sig-lede blockquote {
+        font-size: 18px
+    }
+
+    .sig-flow b {
+        font-size: 24px
+    }
+
+    .prog-intro .latin {
+        font-size: 26px
+    }
+
+    .prog-item h4 {
+        font-size: 17px
+    }
+
+    .faq-list summary {
+        font-size: 16px;
+        padding: 22px 40px 22px 0
+    }
+
+    .closing p {
+        font-size: 19px
+    }
+
+    .rv-card,
+    .rv-card.is-feature {
+        flex-basis: 80vw;
+        padding: 26px 24px 22px
+    }
+
+    .rv-card blockquote,
+    .rv-card.is-feature blockquote {
+        font-size: 15px;
+        line-height: 1.8;
+        -webkit-line-clamp: 5
+    }
+
+    .rv-keys {
+        margin-top: 18px
+    }
+
+    .rv-keys li:nth-child(n+4) {
+        display: none
+    }
+
+    .rv-meta {
+        margin-top: 18px;
+        padding-top: 14px
+    }
 }
 
 @media (prefers-reduced-motion:reduce) {
@@ -2255,4 +2373,19 @@ body::before {
     .br-pc {
         display: none
     }
+}
+
+h1,
+h2,
+h3,
+.story-pull strong,
+.sig-lede blockquote,
+.closing p {
+    text-wrap: balance
+}
+
+p,
+dd,
+blockquote {
+    text-wrap: pretty
 }
