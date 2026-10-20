@@ -604,7 +604,7 @@ body::before {
     display: grid;
     grid-template-columns: auto minmax(0, 600px);
     justify-content: center;
-    gap: clamp(32px, 4vw, 64px);
+    gap: clamp(64px, 8vw, 128px);
     align-items: center
 }
 
@@ -661,25 +661,19 @@ body::before {
 
 .hz-panel p.desc {
     color: var(--on-deep-mute);
-    max-width: 28em;
     margin: 0
 }
 
 .values {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid rgba(255, 255, 255, .15);
+    gap: clamp(32px, 4vw, 64px);
     grid-column: 1/-1;
-    margin-top: 40px
+    margin-top: 64px
 }
 
 .values div {
-    padding: 36px 28px 0 0
-}
-
-.values div+div {
-    padding-left: 28px;
-    border-left: 1px solid rgba(255, 255, 255, .15)
+    padding: 0
 }
 
 .values .latin {
@@ -753,8 +747,7 @@ body::before {
 
 .sig-lede p {
     margin: 0;
-    color: var(--mist);
-    max-width: 34em
+    color: var(--mist)
 }
 
 .sig-road {
@@ -844,9 +837,7 @@ body::before {
 .sig-care {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding-left: clamp(28px, 3vw, 48px);
-    border-left: 1px solid var(--line)
+    align-items: flex-start
 }
 
 .sig-care p {
@@ -1704,8 +1695,7 @@ body::before {
 .faq-list details p {
     margin: 0;
     padding: 0 48px 32px 0;
-    color: var(--mist);
-    max-width: 40em
+    color: var(--mist)
 }
 
 .closing {
@@ -2146,6 +2136,7 @@ body::before {
 
     .values {
         grid-template-columns: 1fr;
+        gap: 0;
         margin-top: 20px
     }
 
@@ -2481,4 +2472,30 @@ blockquote {
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round
+}
+
+.footer-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    font-size: 12px;
+    line-height: 1.6
+}
+
+.footer-copy a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    transition: color .3s var(--ease), border-color .3s var(--ease)
+}
+
+.footer-copy a:hover {
+    color: var(--ink);
+    border-color: var(--rose-soft)
+}
+
+@media (max-width:700px) {
+    .footer-copy {
+        align-items: flex-start
+    }
 }
