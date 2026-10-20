@@ -888,10 +888,8 @@ body::before {
     }
 
     .sig-care {
-        padding: 32px 0 0;
-        border-left: 0;
-        border-top: 1px solid var(--line);
-        margin-top: 8px
+        padding: 0;
+        border-left: 0
     }
 }
 
@@ -1252,18 +1250,57 @@ body::before {
 }
 
 @media (max-width:560px) {
+    .prog-tabs {
+        margin-bottom: 28px
+    }
+
+    .prog-tab {
+        padding: 12px 0
+    }
+
+    .prog-tab .latin {
+        display: none
+    }
+
+    .prog-tab small {
+        margin: 0;
+        font-size: 15px;
+        color: inherit
+    }
+
+    .prog-panel {
+        gap: 24px
+    }
+
+    .prog-intro .latin {
+        display: none
+    }
+
+    .prog-intro h3 {
+        margin: 0 0 8px;
+        font-size: 18px
+    }
+
+    .prog-intro p {
+        font-size: 14px
+    }
+
     .prog-item {
-        grid-template-columns: 1fr
+        gap: 4px 16px;
+        padding: 18px 0
+    }
+
+    .prog-item h4 small {
+        display: block;
+        margin: 2px 0 0
     }
 
     .prog-price {
-        grid-column: auto;
-        grid-row: auto;
-        text-align: left
+        font-size: 17px
     }
 
-    .prog-item p {
-        grid-column: auto
+    .prog-group {
+        padding: 28px 0 10px
     }
 }
 
@@ -1283,11 +1320,27 @@ body::before {
 
 .step a {
     align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     margin-top: 14px;
     font-size: 13px;
+    font-weight: 400;
+    color: var(--ink);
     text-decoration: none;
     border-bottom: 1px solid var(--rose);
-    padding-bottom: 1px
+    padding-bottom: 2px
+}
+
+.step a::after {
+    content: "↗";
+    font-size: 12px;
+    color: var(--rose);
+    transition: transform .3s var(--ease)
+}
+
+.step a:hover::after {
+    transform: translate(2px, -2px)
 }
 
 .steps::before {
@@ -2388,4 +2441,44 @@ p,
 dd,
 blockquote {
     text-wrap: pretty
+}
+
+.nowrap {
+    white-space: nowrap
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+}
+
+.contact-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px 6px 11px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color .3s var(--ease), background .3s var(--ease)
+}
+
+.contact-chip:hover {
+    border-color: var(--rose-soft);
+    background: var(--porcelain)
+}
+
+.contact-chip svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: var(--rose);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round
 }
