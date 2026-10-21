@@ -2037,6 +2037,40 @@ body::before {
     display: none
 }
 
+@media (max-width:900px),
+(prefers-reduced-motion:reduce) {
+    .hz {
+        height: auto;
+        padding: 88px 0 32px
+    }
+
+    .hz-sticky {
+        position: static;
+        height: auto;
+        overflow: visible
+    }
+
+    .hz-bar {
+        display: none
+    }
+
+    .hz-track {
+        flex-direction: column;
+        width: auto;
+        transform: none
+    }
+
+    .hz-panel {
+        flex: none;
+        padding: 0 var(--gutter) 56px
+    }
+
+    .hz-panel+.hz-panel .hz-panel-in {
+        padding-top: 48px;
+        border-top: 1px solid rgba(255, 255, 255, .14)
+    }
+}
+
 @media (max-width:1024px) {
     .nav {
         display: none
@@ -2092,37 +2126,6 @@ body::before {
 
     .sec-head .latin {
         padding-top: 0
-    }
-
-    .hz {
-        height: auto;
-        padding: 88px 0 32px
-    }
-
-    .hz-sticky {
-        position: static;
-        height: auto;
-        overflow: visible
-    }
-
-    .hz-bar {
-        display: none
-    }
-
-    .hz-track {
-        flex-direction: column;
-        width: auto;
-        transform: none
-    }
-
-    .hz-panel {
-        flex: none;
-        padding: 0 var(--gutter) 56px
-    }
-
-    .hz-panel+.hz-panel .hz-panel-in {
-        padding-top: 48px;
-        border-top: 1px solid rgba(255, 255, 255, .14)
     }
 
     .hz-panel-in {
@@ -2320,11 +2323,24 @@ body::before {
     }
 
     .rv-track {
-        animation: none
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+        padding: 0 var(--gutter)
+    }
+
+    .rv-track [aria-hidden="true"] {
+        display: none
     }
 
     .rv-viewport {
-        overflow-x: auto
+        -webkit-mask-image: none;
+        mask-image: none
+    }
+
+    .rv-pause {
+        display: none
     }
 }
 
