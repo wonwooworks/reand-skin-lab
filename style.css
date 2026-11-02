@@ -913,8 +913,9 @@ body::before {
 
 .ba-before {
     background-image: radial-gradient(3% 2.2% at 44% 34%, #C9707A 0%, transparent 100%), radial-gradient(2.4% 1.8% at 56% 40%, #C46A72 0%, transparent 100%), radial-gradient(3% 2% at 47% 44%, #CF7E86 0%, transparent 100%), radial-gradient(12% 8% at 42% 40%, rgba(205, 110, 118, .55) 0%, transparent 100%), radial-gradient(12% 8% at 58% 40%, rgba(205, 110, 118, .55) 0%, transparent 100%), radial-gradient(28% 22% at 50% 36%, #EFD5CC 0%, #DDB5AA 60%, transparent 61%), radial-gradient(40% 30% at 50% 80%, #E3C3B8 0%, transparent 70%), linear-gradient(180deg, #EDE5E1, #D9CBC6);
-    filter: blur(14px) saturate(.9);
-    transform: scale(1.08)
+    filter: blur(var(--blur, 14px)) saturate(.9);
+    transform: scale(var(--bscale, 1.08));
+    transition: filter .2s ease-out, transform .2s ease-out
 }
 
 .ba-before-clip {

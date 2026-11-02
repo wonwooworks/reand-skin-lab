@@ -127,9 +127,16 @@ const REVIEWS = [
     });
 })();
 
+function setBa(ba, v) {
+    const t = Math.min(1, Math.max(0, (v - 60) / 35));
+    ba.style.setProperty("--pos", v + "%");
+    ba.style.setProperty("--blur", (14 * (1 - t)).toFixed(1) + "px");
+    ba.style.setProperty("--bscale", (1 + .08 * (1 - t)).toFixed(3));
+}
+
 document.querySelectorAll(".ba").forEach(ba => {
     const r = ba.querySelector(".ba-range");
-    r.addEventListener("input", () => { ba.classList.remove("is-hinting"); ba.style.setProperty("--pos", r.value + "%") });
+    r.addEventListener("input", () => { ba.classList.remove("is-hinting"); setBa(ba, +r.value) });
 });
 
 if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
